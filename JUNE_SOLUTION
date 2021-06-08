@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Practice 
+{
+	static public void solution(char[] c, int n)
+	{
+		int start = n/2;
+		int end  = start + 1;
+		
+		int m = n-1;
+		
+		for(int row = 0; row < n; row++ )		// no. of rows
+		{
+			for(int i = 0; i < m; i++)			  // no. of spacings
+			{
+				System.out.print(" ");
+			}
+				m--;	
+			
+			for(int i = start; i < end; i++ )	// printing the variables
+			{
+				System.out.print( c[ i % n ]);
+			}
+			
+			System.out.println();
+			end++;		
+		}
+	}
+	
+	public static void main(String[]args)
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		String in_str = null;
+		
+		while(t-- >0)
+		{
+			in_str = sc.next();
+			char[] str = in_str.toCharArray();
+			solution(str, str.length);
+		}
+
+		sc.close();
+	}
+}
